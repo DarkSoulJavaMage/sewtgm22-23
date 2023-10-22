@@ -1,22 +1,39 @@
+
 public class WortEintrag {
+    private String wort;
+    private String url;
 
 
-    private String wort; // Attribute for storing the word
-    private String url;  // Attribute for storing the URL
-
-
-
-
-    // Constructor
-    public WortEintrag(String tiernamein, String urlin) {
-        this.wort = tiernamein;
-        this.url = urlin;
+    public WortEintrag(String wort, String url){
+        this.wort = wort;
+        this.url = url;
+    }
+    public WortEintrag(){
+        this.wort = "Example";
+        this.url = "https://Example.com";
     }
 
 
 
+    public String getWort() {
+        return wort;
+    }
+    public String getUrl() {
+        return url;
+    }
+    public void setWort(String wort) {
+        if(wort != null && wort.length() >= 2) {
+            this.wort = wort;
+        }
+        else{
+            throw new IllegalArgumentException("Wort zu war zu kurz!");
+        }
+    }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-    //Checks url
+
     public boolean checkURL(){
         String http;
         String domain;
@@ -55,44 +72,8 @@ public class WortEintrag {
     }
 
 
-
-
-
-    // Getter for 'wort'
-    public String getWort() {
-        return this.wort;
-    }
-
-    // Getter for 'url'
-    public String getUrl() {
-        return this.url;
-    }
-
-
-
-
-    // Setter for 'url'
-    public void setWort(String wort) {
-        if(wort != null && wort.length() >= 2) {
-            this.wort = wort;
-        }
-        else{
-            throw new IllegalArgumentException("Wort zu kurz!");
-        }
-    }
-
-
-
-    // Setter for 'url'
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-
     @Override
     public String toString(){
         return wort + "; " + url;
     }
-
-
 }
