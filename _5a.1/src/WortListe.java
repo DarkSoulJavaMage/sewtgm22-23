@@ -1,3 +1,8 @@
+/**
+ * In dieser Klasse fasse ich meine ganzen Einträge in einen Array zusammen
+ * @author Andreas Proschek
+ * @version 22-10-2023
+ */
 
 public class WortListe {
     private WortEintrag[] liste;
@@ -13,8 +18,6 @@ public class WortListe {
             throw new IllegalArgumentException("Nicht wurde eingetragen!");
         }
     }
-
-
 
 
 
@@ -57,15 +60,13 @@ public class WortListe {
 
 
 
-
+    //Getter
     public WortEintrag getWort(int index){
         if(index > this.liste.length || liste[index] == null){
             throw new IllegalArgumentException("Index ungültig!");
         }
         return this.liste[index];
     }
-
-
 
 
     public boolean removeWort(String wort){
@@ -80,10 +81,6 @@ public class WortListe {
         }
         return false;
     }
-
-
-
-
 
 
     @Override

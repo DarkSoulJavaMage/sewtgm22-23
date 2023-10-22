@@ -1,3 +1,9 @@
+/**
+ * In dieser Klasse erstelle ich ein Objekt mit zwei Attributen durch die ich die grundlegende Logik hinter meinen
+ * WoordTrainer
+ * @author Andreas Proschek
+ * @version 22-10-2023
+ */
 
 public class WortEintrag {
     private String wort;
@@ -14,7 +20,7 @@ public class WortEintrag {
     }
 
 
-
+    //Getter
     public String getWort() {
         return wort;
     }
@@ -29,6 +35,8 @@ public class WortEintrag {
             throw new IllegalArgumentException("Wort zu war zu kurz!");
         }
     }
+
+    //Setter
     public void setUrl(String url) {
         this.url = url;
     }

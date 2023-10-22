@@ -1,3 +1,8 @@
+/**
+ * In dieser Klasse werden alle Methoden und Klassen überprüft
+ * @author Andreas Proschek
+ * @version 22-10-2023
+ */
 
 public class Main {
     public static void main(String[] args) {

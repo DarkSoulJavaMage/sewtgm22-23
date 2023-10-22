@@ -1,5 +1,9 @@
 import java.math.*;
-
+/**
+ * In dieser Klasse wird das Konstrukt unseres Spieles abgerufen
+ * @author Andreas Proschek
+ * @version 22-10-2023
+ */
 
 
 public class WortTrainer {
@@ -10,7 +14,7 @@ public class WortTrainer {
 
 
 
-
+    //Setter
     public void setListe(WortListe liste) {
         if(liste == null){
             throw new IllegalArgumentException("Die Liste ist leer!");
@@ -24,13 +28,13 @@ public class WortTrainer {
     }
 
 
-
+    //Getter
     public WortEintrag getEintrag() {
         return eintrag;
     }
 
 
-
+    //Setter
     public void setEintrag(WortEintrag eintrag) {
         this.eintrag = eintrag;
     }
