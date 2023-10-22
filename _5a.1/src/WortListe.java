@@ -10,11 +10,9 @@ public class WortListe {
             this.liste = liste;
         }
         else{
-            throw new IllegalArgumentException("Nicht wurde eingetragen!");
+            throw new IllegalArgumentException("Nichts wurde eingetragen!");
         }
     }
-
-
 
 
 
