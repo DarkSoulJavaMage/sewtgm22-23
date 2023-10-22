@@ -9,25 +9,49 @@ public class WortEintrag {
 
     // Constructor
     public WortEintrag(String tiernamein, String urlin) {
-
+        this.wort = tiernamein;
+        this.url = urlin;
     }
 
 
 
 
     //Checks url
-    public static boolean checkURL(String eingabeURL) {
-        if (eingabeURL != null) {
+    public boolean checkURL(){
+        String http;
+        String domain;
+        String file = "";
+        int index;
 
-
-
-
-
-        }else{
-            throw new IllegalArgumentException("Wort zu kurz!");
+        if(this.url.substring(0,8).equals("https://")){
+            http = this.url.substring(0,8);
+        }
+        else{
+            if(this.url.substring(0,7).equals("http://")){
+                http = this.url.substring(0,7);
+            }
+            else{
+                return false;
+            }
         }
 
-        return false;
+        //domain vom Rest abspalten
+        domain = this.url.substring(http.length(), this.url.length());
+
+        index = domain.indexOf('.');
+        file = domain.substring(index, domain.length());
+        domain = domain.substring(0, index);
+
+        //checkt, ob auf dem http/https ein Buchstabe folgt
+        if(domain.substring(0,1).matches("[A-Za-z]") == false){
+            return false;
+        }
+
+        //checkt, ob auf den punkt ein Buchstabe folgt
+        if(file.substring(1,2).matches("[A-Za-z]") == false){
+            return false;
+        }
+        return true;
     }
 
 
@@ -48,12 +72,20 @@ public class WortEintrag {
 
 
     // Setter for 'url'
-    public void setWort(String wortEinleseHilfe) {
-        this.wort = wortEinleseHilfe;
+    public void setWort(String wort) {
+        if(wort != null && wort.length() >= 2) {
+            this.wort = wort;
+        }
+        else{
+            throw new IllegalArgumentException("Wort zu kurz!");
+        }
     }
+
+
+
     // Setter for 'url'
-    public void setUrl(String urlEinleseHilfe) {
-        this.url = urlEinleseHilfe;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
 
