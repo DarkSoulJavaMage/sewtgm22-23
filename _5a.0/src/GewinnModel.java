@@ -54,17 +54,15 @@ public class GewinnModel {
      */
     public void berechneRunde(int spielerZahl){
         if(spielerZahl == computerZahl){
-            gesamtPunkte += 20;
             rundenErgebnis = 20;
         }
-        else if(spielerZahl+1 == computerZahl || spielerZahl-1 ==computerZahl){
-            gesamtPunkte += 5;
-            rundenErgebnis =5;
+        else if(spielerZahl+1 == computerZahl || spielerZahl-1 == computerZahl){
+            rundenErgebnis = 5;
         }
-        else{
-            gesamtPunkte -= 10;
-            rundenErgebnis=-10;
+        else {
+            rundenErgebnis = -10;
         }
+        gesamtPunkte += rundenErgebnis;
     }
 
     /**
